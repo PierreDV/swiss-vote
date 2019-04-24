@@ -1,7 +1,7 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import { ResultsTable } from "./App";
+import ResultsTable from "./ResultsTable";
 
 const mockResult = {
   description: {
