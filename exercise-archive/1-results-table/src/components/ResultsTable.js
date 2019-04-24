@@ -1,22 +1,24 @@
 import React from 'react';
 
-function ResultsTable(props) {
+function ResultsTable({ description, results }) {
   return (
     <div>
-      <h2>{props.description.en}</h2>
+      <h2>{description && description.en}</h2>
       <table>
-        <tbody>
+        <thead>
           <tr key="header">
-            {Object.keys(props.results[0]).map((key) => <th key={key}>{key}</th>)}
+            {results && Object.keys(results[0]).map((key) => <th key={key}>{key}</th>)}
           </tr>
-          {props.results.map((result) => {
+        </thead>
+        <tbody>
+          {results && results.map((result) => {
             return (
               <tr key={result.canton}>
                 <td>{result.canton}</td>
                 <td>{result.yes}</td>
                 <td>{result.no}</td>
               </tr>
-            )
+            );
           })}
         </tbody>
       </table>
